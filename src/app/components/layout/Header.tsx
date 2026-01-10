@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const Header = () => {
   return (
-    <header className="flex items-center">
+    <header className="flex items-center gap-4 px-6 py-2">
       <Link href="/">
         <Image
           src="/logo.svg"
@@ -24,9 +24,9 @@ export const Header = () => {
         <span className="font-semibold">Catalog</span>
       </button>
 
-      <div className="flex items-center rounded-xl bg-primary">
-        <div className="flex items-center gap-2 rounded-xl bg-white m-1">
-          <button className="flex items-center gap-0.5 text-gray-500 text-sm p-1.5 m-0.5 bg-gray-100 rounded-xl transition-colors hover:text-primary">
+      <div className="flex grow items-center rounded-xl bg-primary">
+        <div className="flex grow items-center gap-2 rounded-xl bg-white m-0.5">
+          <button className="flex items-center gap-0.5 text-gray-500 text-sm p-1.5 m-1 bg-gray-100 rounded-xl transition-colors hover:text-primary">
             Everywhere
             <ChevronDown size={12} />
           </button>
@@ -46,6 +46,10 @@ export const Header = () => {
             className="cursor-pointer"
           />
         </div>
+      </div>
+
+      <div>
+        something
       </div>
     </header>
   )
