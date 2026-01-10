@@ -1,5 +1,12 @@
 import { Heart, Package, ShoppingCart, User } from 'lucide-react'
 import { PagesConfig } from '@/app/config/pages.config'
+import type { LucideIcon } from 'lucide-react'
+
+export type HeaderMenuItem = {
+  title: string
+  icon: LucideIcon
+  href: string
+}
 
 export const headerMenu = [
   {
@@ -22,4 +29,4 @@ export const headerMenu = [
     icon: ShoppingCart,
     href: PagesConfig.CART,
   },
-]
+] satisfies HeaderMenuItem[]
