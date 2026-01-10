@@ -28,7 +28,10 @@ export const Header = () => {
 
       <div className="flex grow items-center rounded-xl bg-primary">
         <div className="flex grow items-center gap-2 rounded-xl bg-white m-0.5">
-          <button className="flex items-center gap-0.5 text-gray-500 text-sm p-1.5 m-1 bg-gray-100 rounded-xl transition-colors hover:text-primary">
+          <button
+            className="flex items-center gap-0.5 text-gray-500 text-sm p-1.5 m-1 bg-gray-100 rounded-xl transition-colors hover:text-primary"
+            title="Everywhere"
+          >
             Everywhere
             <ChevronDown size={12} />
           </button>
