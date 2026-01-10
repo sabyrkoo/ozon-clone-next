@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ChevronDown, LayoutGrid, Search } from 'lucide-react'
 import Link from 'next/link'
 import { headerMenu } from '@/app/components/layout/header-menu.data'
+import clsx from 'clsx'
 
 export const Header = () => {
   return (
@@ -50,18 +51,25 @@ export const Header = () => {
       </div>
 
       <ul className="flex gap-6">
-        {headerMenu.map((item) => (
+        {headerMenu.map((item, index) => (
           <li
             key={item.title}
-            className="text-gray-500 transition-colors hover:text-primary"
+            className="relative"
           >
             <Link
               href={item.href}
-              className="flex flex-col items-center"
+              className={clsx(
+                'flex flex-col items-center transition-colors hover:text-primary',
+                index === 0 ? 'text-black' : 'text-gray-500',
+              )}
             >
               <item.icon size={20} />
-              <span className='text-sm'>{item.title}</span>
+              <span className="text-sm">{item.title}</span>
             </Link>
+
+            {index === 0 && (
+              <span className="absolute top-0 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+            )}
           </li>
         ))}
       </ul>
