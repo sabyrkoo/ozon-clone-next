@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { LayoutGrid } from 'lucide-react'
+import { ChevronDown, LayoutGrid, Search } from 'lucide-react'
 import Link from 'next/link'
 
 export const Header = () => {
@@ -23,6 +23,30 @@ export const Header = () => {
         />
         <span className="font-semibold">Catalog</span>
       </button>
+
+      <div className="flex items-center rounded-xl bg-primary">
+        <div className="flex items-center gap-2 rounded-xl bg-white m-1">
+          <button className="flex items-center gap-0.5 text-gray-500 text-sm p-1.5 m-0.5 bg-gray-100 rounded-xl transition-colors hover:text-primary">
+            Everywhere
+            <ChevronDown size={12} />
+          </button>
+
+          <form>
+            <input
+              type="search"
+              placeholder="Search on Ozon"
+              className="placeholder:text-gray-400 outline-none"
+            />
+          </form>
+        </div>
+
+        <div className="py-2.5 px-4">
+          <Search
+            color="#fff"
+            className="cursor-pointer"
+          />
+        </div>
+      </div>
     </header>
   )
 }
