@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import { ChevronDown, LayoutGrid, Search } from 'lucide-react'
 import Link from 'next/link'
+import { headerMenu } from '@/app/components/layout/header-menu.data'
 
 export const Header = () => {
   return (
-    <header className="flex items-center gap-4 px-6 py-2">
+    <header className="flex items-center gap-6 px-6 py-2">
       <Link href="/">
         <Image
           src="/logo.svg"
@@ -48,9 +49,22 @@ export const Header = () => {
         </div>
       </div>
 
-      <div>
-        something
-      </div>
+      <ul className="flex gap-6">
+        {headerMenu.map((item) => (
+          <li
+            key={item.title}
+            className="text-gray-500 transition-colors hover:text-primary"
+          >
+            <Link
+              href={item.href}
+              className="flex flex-col items-center"
+            >
+              <item.icon size={20} />
+              <span className='text-sm'>{item.title}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </header>
   )
 }
