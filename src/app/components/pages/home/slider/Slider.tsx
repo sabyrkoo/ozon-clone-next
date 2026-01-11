@@ -17,7 +17,7 @@ export const Slider = () => {
   }
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden my-3">
       <ul
         className="flex transition-transform duration-500 ease-in-out"
         style={{transform: `translateX(-${activeIndex * 100}%)`}}
