@@ -9,7 +9,7 @@ export const TopMenu = () => {
           <li key={item.title}>
             <Link
               href={item.href}
-              className="flex items-center gap-2 pt-2 pb-3 transition-colors hover:text-primary"
+              className="flex items-center gap-2 pt-2 pb-3 text-gray-500 transition-colors hover:text-primary"
             >
               <item.icon size={20} />
               <span className="text-sm">{item.title}</span>
