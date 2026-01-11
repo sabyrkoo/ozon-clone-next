@@ -1,20 +1,31 @@
 'use client'
 
 import { useState } from 'react'
-import { SLIDES } from '@/app/components/pages/home/slider/slides.data'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { SLIDES } from './slides.data'
 
 export const Slider = () => {
-  const [activeSlideId, setActiveSlideId] = useState(1)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => prev - 1)
+  }
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => prev + 1)
+  }
 
   return (
-    <div className="relative">
-      <ul className="my-3">
+    <div className="relative overflow-hidden">
+      <ul
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{transform: `translateX(-${activeIndex * 100}%)`}}
+      >
         {SLIDES.map((slide) => (
           <li
             key={slide.id}
-            className={slide.id === activeSlideId ? 'block' : 'hidden'}
+            className="min-w-full"
           >
             <Image
               src={slide.image}
@@ -22,34 +33,42 @@ export const Slider = () => {
               width={1400}
               height={300}
               className="rounded-2xl"
+              priority
             />
           </li>
         ))}
       </ul>
 
-      <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-3">
-        <button
-          className="cursor-pointer"
-          onClick={() => setActiveSlideId(
-            activeSlideId === 1 ? SLIDES.length : activeSlideId - 1,
+      <div className="absolute top-1/2 -translate-y-1/2 w-full px-3 flex">
+        <div className="w-6">
+          {activeIndex > 0 && (
+            <button
+              type="button"
+              onClick={prevSlide}
+              className="cursor-pointer"
+            >
+              <ChevronLeft
+                size={24}
+                color="#fff"
+              />
+            </button>
           )}
-        >
-          <ChevronLeft
-            size={24}
-            color="#fff"
-          />
-        </button>
-        <button
-          className="cursor-pointer"
-          onClick={() => setActiveSlideId(
-            activeSlideId === SLIDES.length ? 1 : activeSlideId + 1,
+        </div>
+
+        <div className="ml-auto w-6">
+          {activeIndex < SLIDES.length - 1 && (
+            <button
+              type="button"
+              onClick={nextSlide}
+              className="cursor-pointer"
+            >
+              <ChevronRight
+                size={24}
+                color="#fff"
+              />
+            </button>
           )}
-        >
-          <ChevronRight
-            size={24}
-            color="#fff"
-          />
-        </button>
+        </div>
       </div>
     </div>
   )
