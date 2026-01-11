@@ -7,7 +7,7 @@ export class PagesConfig {
   static readonly CART = '/cart'
   
   static readonly INSTALLMENT = '/installment'
-  static readonly KAZAKH_SELLERS = '/kazash-sellers'
+  static readonly KAZAKH_SELLERS = '/kazakh-sellers'
   static readonly CLOTHING = '/clothing'
   static readonly ELECTRONICS = '/electronics'
   static readonly HOUSE_AND_GARDEN = '/house-and-garden'
