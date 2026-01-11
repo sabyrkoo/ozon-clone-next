@@ -9,7 +9,7 @@ export default function Home() {
       <TopMenu />
       <Image
         src="/banner.png"
-        alt=""
+        alt="Banner"
         width={1400}
         height={60}
         className="cursor-pointer"
