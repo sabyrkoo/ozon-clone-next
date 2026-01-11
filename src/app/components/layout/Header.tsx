@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 export const Header = () => {
   return (
-    <header className="flex items-center gap-6 px-6 py-2">
+    <header className="flex items-center gap-6 px-6 py-2 bg-white">
       <Link href="/">
         <Image
           src="/logo.svg"
