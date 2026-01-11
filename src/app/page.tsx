@@ -1,6 +1,7 @@
 import { Header } from '@/app/components/layout/Header'
 import { TopMenu } from '@/app/components/layout/TopMenu'
 import Image from 'next/image'
+import { Slider } from '@/app/components/pages/home/slider/Slider'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         className="cursor-pointer"
         priority
       />
+      <Slider />
     </main>
   )
 }
