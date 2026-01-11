@@ -1,7 +1,22 @@
+import Link from 'next/link'
+import { topMenu } from './top-menu.data'
+
 export const TopMenu = () => {
   return (
-    <nav>
-      TopMenu
+    <nav className='px-6'>
+      <ul className='flex gap-6'>
+        {topMenu.map((item) => (
+          <li key={item.title}>
+            <Link
+              href={item.href}
+              className="flex items-center gap-2 pt-2 pb-1 transition-colors hover:text-primary"
+            >
+              <item.icon size={20} />
+              <span className="text-sm">{item.title}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   )
 }
