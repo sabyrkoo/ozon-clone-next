@@ -1,3 +1,8 @@
+type Slide = {
+  id: number,
+  image: string
+}
+
 export const SLIDES = [
   {
     id: 1,
@@ -15,4 +20,4 @@ export const SLIDES = [
     id: 4,
     image: '/slides/4.webp',
   },
-]
+  ] satisfies Slide[]
