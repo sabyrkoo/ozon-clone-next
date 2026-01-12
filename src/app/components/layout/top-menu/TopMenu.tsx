@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { LanguageSwitcher } from '@/app/components/layout/language-switcher/LanguageSwitcher'
+import { LanguageSwitcher } from '@/app/components/layout/top-menu/language-switcher/LanguageSwitcher'
 import { topMenu } from '@/app/components/layout/top-menu/top-menu.data'
 
 export const TopMenu = () => {

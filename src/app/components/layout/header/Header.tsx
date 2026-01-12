@@ -3,8 +3,11 @@ import { ChevronDown, LayoutGrid, Search } from 'lucide-react'
 import Link from 'next/link'
 import { headerMenu } from '@/app/components/layout/header/header-menu.data'
 import clsx from 'clsx'
+import { useTranslations } from 'next-intl'
 
 export const Header = () => {
+  const t = useTranslations('header')
+
   return (
     <header className="flex items-center gap-6 px-6 pb-2 pt-4 bg-white">
       <Link href="/public">
@@ -23,7 +26,7 @@ export const Header = () => {
           color="#fff"
           size={24}
         />
-        <span className="font-semibold">Catalog</span>
+        <span className="font-semibold">{t('catalogTitle')}</span>
       </button>
 
       <div className="flex grow items-center rounded-xl bg-primary">
@@ -39,7 +42,7 @@ export const Header = () => {
           <form>
             <input
               type="search"
-              placeholder="Search on Ozon"
+              placeholder={t('searchPlaceholder')}
               className="placeholder:text-gray-400 outline-none"
             />
           </form>

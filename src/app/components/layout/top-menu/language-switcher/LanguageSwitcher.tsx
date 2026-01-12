@@ -1,6 +1,6 @@
 'use client'
 
-import { LANGUAGES } from '@/app/components/layout/language-switcher/language-switcher.data'
+import { LANGUAGES } from '@/app/components/layout/top-menu/language-switcher/language-switcher.data'
 import { useState } from 'react'
 
 export const LanguageSwitcher = () => {
