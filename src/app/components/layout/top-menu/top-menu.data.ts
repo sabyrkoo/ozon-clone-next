@@ -2,7 +2,7 @@ import {  Flower2, Microwave, Percent, Rabbit, Shirt, Smartphone, Van } from 'lu
 import { PagesConfig } from '@/app/config/pages.config'
 import type { LucideIcon } from 'lucide-react'
 
-export type TopMenuItem = {
+type TopMenuItem = {
   title: string
   icon: LucideIcon
   href: string

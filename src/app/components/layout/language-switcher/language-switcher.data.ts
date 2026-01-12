@@ -1,10 +1,10 @@
 type Language = {
   code: string
-  label: string
+  flag: string
 }
 
 export const LANGUAGES = [
-  { code: 'en', label: '🇬🇧' },
-  { code: 'ru', label: '🇷🇺' },
-  { code: 'kz', label: '🇰🇿' },
+  { code: 'en', flag: '🇬🇧' },
+  { code: 'ru', flag: '🇷🇺' },
+  { code: 'kz', flag: '🇰🇿' },
 ] satisfies Language[]
