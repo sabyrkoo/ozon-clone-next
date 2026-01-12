@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 export const Header = () => {
   return (
-    <header className="flex items-center gap-6 px-6 py-2 bg-white">
+    <header className="flex items-center gap-6 px-6 pb-2 pt-4 bg-white">
       <Link href="/">
         <Image
           src="/logo.svg"
@@ -30,7 +30,7 @@ export const Header = () => {
         <div className="flex grow items-center gap-2 rounded-xl bg-white m-0.5">
           <button
             title="Everywhere"
-            className="flex items-center gap-0.5 text-gray-500 text-sm p-1.5 m-1 bg-gray-100 rounded-xl transition-colors hover:text-primary cursor-pointer"
+            className="flex items-center gap-0.5 text-gray-400 text-sm p-1.5 m-1 bg-gray-100 rounded-xl transition-colors hover:text-primary cursor-pointer"
           >
             Everywhere
             <ChevronDown size={12} />
@@ -63,7 +63,7 @@ export const Header = () => {
               href={item.href}
               className={clsx(
                 'flex flex-col items-center transition-colors hover:text-primary',
-                index === 0 ? 'text-black' : 'text-gray-500',
+                index === 0 ? 'text-black' : 'text-gray-400',
               )}
             >
               <item.icon size={20} />
